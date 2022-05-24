@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"> <!-- informação obrigatória, para ser lido em qualquer língua -->
+		<meta name="viewport" content="width=device-width"> <!-- ADAPTAR P/ TELA CELULAR verifica a quantidade de pixels q tem na tela do CELULAR --> 	
+		<title>Contato - Barbearia Alura</title>
+
+		<link rel="stylesheet" href="reset.css"> <!-- puxa arq "reset" q existe p/ limpar as configs padrão do navegador, como 												bordas, sublinhados de links, etc -->
+		<link rel="stylesheet" href="style.css"> <!-- informação obrigatória para chamar o arquivo CSS -->
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> <!-- chamar a fonte Montserrat do google fonts -->
+
+		<!-- OBS IMPORTANTE: primeiro colocar arq RESET e depois o nosso CSS -->
+	</head>
+
+	<body>
+		<header> <!-- cabeçalho principal da pagina -->
+			<div class="caixa">
+				<h1><img src="logo.png" alt="Logo da Barbearia Alura"></h1> <!-- ALT é para acessibilidade -->
+
+				<nav> <!-- indica que a lista abaixo será de navegação -->
+					<ul>
+						<li><a href="index.html"> Home </a></li> <!-- A tag <a> serve como uma âncora, um link, que vai nos levar para outro ponto na internet e passar o link de referencia com href -->
+						<li><a href="produtos.html"> Produtos </a></li>
+						<li><a href="contato.html"> Contato </a></li>
+						<!-- para chamar uma página externa, a sintaxe é: <a href="http://www.google.com"> -->
+					</ul>				
+				</nav>
+			</div>	 
+		</header>
+
+		<main>
+			<form>
+				<label for="nomesobrenome">Nome e Sobrenome</label> <!-- label é uma etiqueta para o input -->
+				<input type="text" id="nomesobrenome" class="input-padrao" required> <!-- no formulário, o label e o input andam juntos / REQUIRED é pq é campo obrigatório -->
+
+				<label for="email">E-mail</label>
+				<input type="email" name="email" class="input-padrao" required placeholder="seuemail@dominio.com"> <!-- type email é para o teclado do celular se transformar p/ facilitar o usuário / PLACEHOLDER é para mostrar exemplo ao usuário -->
+				
+				<label for="telefone">Telefone</label>
+				<input type="tel" name="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">	<!-- type tel é para o teclado do celular se transformar em numérico p/ facilitar o usuário -->
+
+				<label for="mensagem">Mensagem</label>
+				<textarea cols="70" rows="10" id="mensagem" class="input-padrao" required=""></textarea> <!-- não é uma entrada simples, o usuário pode escrever várias linhas de texto, cols e rows é para definir o tamanho que aparecerá p/ usuário -->	
+
+				<fieldset> <!-- ao invés da <div> usa fieldset para entradas específicas / é usada para criar uma divisão no nosso formulário, com um ou mais <input> -->
+					<legend>Como prefere o nosso contato?</legend> <!-- dentro do fieldset, o <p> paragrafo é legend -->
+					<label for="radio-email"><input type="radio" name="contato" value="email" id="radio-email"> E-mail</label>
+						 <!-- tipo radio sao as opçoes / name=contato é para qd clicar em um, nao deixar marcar outro ao mesmo tempo, ficam no mesmo grupo-->	
+					<label for="radio-telefone"><input type="radio" name="contato" value="telefone" id="radio-telefone"> Telefone</label>
+					<label for="radio-whatsapp"><input type="radio" name="contato" value="whatsapp" id="radio-whatsapp" checked> WhatsApp</label> <!-- CHECKED é para deixar marcado padrao -->
+				</fieldset>
+
+				<fieldset>
+					<legend>Qual horário prefere ser atendido?</legend> <!-- dentro do fieldset, o paragrafo é legend -->
+					<select> <!-- Criar a caixinha dropdown-->
+						<option>Manhã</option> <!-- A estrutura da tag <select> é composta de 1 ou + <option>-->
+						<option>Tarde</option>
+						<option>Noite</option>
+					</select>
+				</fieldset>
+
+				<label class="checkbox"><input type="checkbox" checked>Gostaria de receber nossas novidades por e-mail?</label>
+
+				<input type="submit" value="Enviar formulário" class="enviar"> <!-- obrigado a ter no formulário, campo de Envio, o value é para garantir que fique em portugues -->
+			</form>
+
+			<table> <!-- tag para criação de tabela -->
+
+				<thead> <!-- CABEÇALHO da tabela -->
+					<tr> <!-- tr = table row (linha da tabela) -->
+						<th>Dia</th> <!-- th = célula do head da tabela -->
+						<th>Horário</th>
+					</tr> 
+
+					<!-- para MESCLAR células, usa comando COLSPAN="num de celulas q quer juntar" 
+					<tr>
+ 					   <td colspan="2">Rio de Janeiro</td> 
+					</tr>-->
+
+				</thead>
+
+				<tbody>	<!-- CORPO da tabela -->
+					<tr>
+						<td>Segunda</td> <!-- td = célula - nesse caso teremos duas células em cada linha -->
+						<td>8h ~ 20h</td>
+					</tr>
+					<tr>
+						<td>Quarta</td> 
+						<td>8h ~ 20h</td>
+					</tr>
+					<tr>
+						<td>Sexta</td> 
+						<td>8h ~ 20h</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</main>
+
+		<footer> <!-- assim como temos cabeçalho e main, temos o rodapé (footer) -->
+			<img src="logo-branco.png"  alt="Logo da Barbearia Alura">
+			<p class="copyright">&copy; Copyright Barbearia Alura - 2022</p> <!-- &copy; é um UNICODE que serve para colocar o simbol de copyright conforme consulta no site unicode-table para caracteres especiais -->
+		</footer>
+	</body>
+</html>
+
+<!--  site unicode-table.com/pt para verificar caracteres especiais -->
